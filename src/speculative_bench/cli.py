@@ -61,6 +61,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             formats=args.formats,
         )
         cases = filter_cases(load_cases(args.cases), args.tag)
+        if not cases:
+            requested = ", ".join(args.tag or [])
+            print(f"no benchmark cases matched the requested tags: {requested}")
+            return 0
         adapters = get_builtin_adapters(args.algorithm)
         result = BenchmarkRunner(cases=cases, adapters=adapters, config=config).run()
         written = write_reports(result, config.output_dir, config.formats)

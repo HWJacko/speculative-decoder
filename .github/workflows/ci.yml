@@ -8,6 +8,10 @@ on:
 jobs:
   test-and-benchmark:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install
         run: python -m pip install ".[dev]"
@@ -29,5 +33,5 @@ jobs:
       - name: Upload benchmark reports
         uses: actions/upload-artifact@v4
         with:
-          name: speculative-decoding-benchmark-reports
+          name: speculative-decoding-benchmark-reports-py${{ matrix.python-version }}
           path: reports/

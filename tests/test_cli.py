@@ -21,3 +21,9 @@ def test_cli_defaults_to_run(capsys):
     assert main([]) == 0
     out = capsys.readouterr().out
     assert "benchmark-results.json" in out
+
+
+def test_cli_empty_tag_filter_exits_cleanly(capsys):
+    assert main(["run", "--tag", "does-not-exist"]) == 0
+    out = capsys.readouterr().out
+    assert "no benchmark cases matched the requested tags: does-not-exist" in out
