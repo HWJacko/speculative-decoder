@@ -1,0 +1,37 @@
+{
+  "cases": [
+    {
+      "name": "short_instruction",
+      "prompt": "Summarize the role of a verifier model in speculative decoding.",
+      "target_tokens": 48,
+      "draft_tokens": 52,
+      "acceptance_pattern": [1, 1, 1, 0, 1, 1, 0, 1],
+      "tags": ["short", "instruction"],
+      "metadata": {
+        "task": "technical summary"
+      }
+    },
+    {
+      "name": "medium_code_reasoning",
+      "prompt": "Explain why a benchmark should separate cold-start overhead from steady-state throughput.",
+      "target_tokens": 128,
+      "draft_tokens": 148,
+      "acceptance_pattern": [1, 1, 0, 1, 1, 1, 0, 0, 1, 1],
+      "tags": ["medium", "reasoning"],
+      "metadata": {
+        "task": "engineering rationale"
+      }
+    },
+    {
+      "name": "long_context_synthesis",
+      "prompt": "Given a long technical report, produce a careful deployment checklist for speculative decoding evaluation.",
+      "target_tokens": 256,
+      "draft_tokens": 308,
+      "acceptance_pattern": [1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1],
+      "tags": ["long", "synthesis"],
+      "metadata": {
+        "task": "checklist generation"
+      }
+    }
+  ]
+}

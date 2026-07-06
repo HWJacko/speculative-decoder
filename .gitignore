@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+build/
+dist/
+reports/
+benchmark-results.*
+.DS_Store
+2026-07-06_speculative-decoding-benchmark-suite_38b5435a74.md
+LOCAL_TESTING.md

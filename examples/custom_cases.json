@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "name": "domain_specific_prompt",
+      "prompt": "Draft a latency analysis for a production speculative decoding service.",
+      "target_tokens": 96,
+      "draft_tokens": 120,
+      "acceptance_pattern": [1, 1, 0, 1, 0, 1, 1, 1],
+      "tags": ["custom", "latency"],
+      "metadata": {
+        "owner": "example",
+        "notes": "Tune target_tokens and acceptance_pattern to match your observed workload."
+      }
+    }
+  ]
+}
